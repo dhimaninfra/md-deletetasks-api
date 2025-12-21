@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deletetask-api
+spec:
+  selector:
+    matchLabels:
+      app: deletetask-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: deletetask-api
+    spec:
+      containers:
+      - name: deletetask-api
+        image: mdcontainerregistry.azurecr.io/deletetask-api:v1
+        ports:
+        - containerPort: 8000
