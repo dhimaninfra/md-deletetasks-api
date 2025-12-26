@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: deletetask-api
-        image: mdcontainerregistry.azurecr.io/deletemicro-api:v1
+        image: mdcontainerregistry.azurecr.io/todo-delete:v1
         ports:
         - containerPort: 8000
         env:
