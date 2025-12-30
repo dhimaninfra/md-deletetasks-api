@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: deletetask-api-ingress
+  labels:
+    app.kubernetes.io/name: deletetask-api-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: deletetask-api.dhimaninfra.online
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: deletetask-api
+            port: 
+              number: 80
